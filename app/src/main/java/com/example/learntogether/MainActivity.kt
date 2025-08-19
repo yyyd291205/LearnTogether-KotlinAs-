@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.learntogether.ui.theme.LearnTogetherTheme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -46,9 +47,9 @@ fun LearnTogether( modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.bg_compose_background)
 
    Column( verticalArrangement = Arrangement.Center,){
-Row(){
-    Image(painter = image, contentDescription = null,)
-}
+
+    Image(painter = image, contentDescription = null, modifier = Modifier.fillMaxWidth())
+
 
 
            Text(
@@ -58,11 +59,10 @@ Row(){
            )
        Text(
            text = stringResource(R.string.text_bloc_1),
-           modifier = modifier.padding(start=16.dp,
-               end= 16.dp),
-           textAlign = TextAlign.Justify,
+           modifier = Modifier.padding(start = 16.dp, end = 16.dp),
+           textAlign = TextAlign.Justify
        )
-       Text(
+                   Text(
            text = stringResource(R.string.text_bloc_2),
            modifier = modifier.padding(16.dp),
            textAlign = TextAlign.Justify,
